@@ -50,10 +50,26 @@
             if (end.y - start.y == -2) {
                 if (end.x - start.x == 2) {
                     // Diagonal forward right
-                    
+                    // Check if there's a piece immediately in the way
+                    boardLocation nearLoc;
+                    nearLoc.x = start.x+1;
+                    nearLoc.y = start.y-1;
+                    if ([self getBoardPieceAtLoc: nearLoc] == BoardPieceBlack || [self getBoardPieceAtLoc: nearLoc] == BoardPieceBKing) {
+                        // Capture the enemy!
+                        [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
+                        return YES;
+                    }
                 } else if (end.x - start.x == -2) {
                     // Diagonal forward left
-                    
+                    // Check if there's a piece immediately in the way
+                    boardLocation nearLoc;
+                    nearLoc.x = start.x-1;
+                    nearLoc.y = start.y-1;
+                    if ([self getBoardPieceAtLoc: nearLoc] == BoardPieceBlack || [self getBoardPieceAtLoc: nearLoc] == BoardPieceBKing) {
+                        // Capture the enemy!
+                        [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
+                        return YES;
+                    }
                 }
                 return NO;
             }
