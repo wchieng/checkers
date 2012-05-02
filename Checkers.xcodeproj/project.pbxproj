@@ -14,7 +14,6 @@
 		DD7C845E1550A3AB00CC13B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7C845D1550A3AB00CC13B9 /* main.m */; };
 		DD7C84621550A3AB00CC13B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7C84611550A3AB00CC13B9 /* AppDelegate.m */; };
 		DD7C84651550A3AB00CC13B9 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7C84631550A3AB00CC13B9 /* MainStoryboard_iPhone.storyboard */; };
-		DD7C84681550A3AB00CC13B9 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7C84661550A3AB00CC13B9 /* MainStoryboard_iPad.storyboard */; };
 		DD7C846B1550A3AB00CC13B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7C846A1550A3AB00CC13B9 /* ViewController.m */; };
 		DD7C84731550A3AB00CC13B9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7C84721550A3AB00CC13B9 /* SenTestingKit.framework */; };
 		DD7C84741550A3AB00CC13B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7C84511550A3AB00CC13B9 /* UIKit.framework */; };
@@ -22,6 +21,7 @@
 		DD7C847D1550A3AB00CC13B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD7C847B1550A3AB00CC13B9 /* InfoPlist.strings */; };
 		DD7C84801550A3AB00CC13B9 /* CheckersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7C847F1550A3AB00CC13B9 /* CheckersTests.m */; };
 		DD7C848B1550A5F200CC13B9 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7C848A1550A5F200CC13B9 /* Board.m */; };
+		DDE016DE155127F20017DD2C /* CheckerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE016DD155127F20017DD2C /* CheckerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 		DD7C84601550A3AB00CC13B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DD7C84611550A3AB00CC13B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DD7C84641550A3AB00CC13B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		DD7C84671550A3AB00CC13B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		DD7C84691550A3AB00CC13B9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DD7C846A1550A3AB00CC13B9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DD7C84711550A3AB00CC13B9 /* CheckersTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckersTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +56,8 @@
 		DD7C847F1550A3AB00CC13B9 /* CheckersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckersTests.m; sourceTree = "<group>"; };
 		DD7C84891550A5F200CC13B9 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		DD7C848A1550A5F200CC13B9 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		DDE016DC155127F20017DD2C /* CheckerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckerView.h; sourceTree = "<group>"; };
+		DDE016DD155127F20017DD2C /* CheckerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +120,10 @@
 				DD7C84601550A3AB00CC13B9 /* AppDelegate.h */,
 				DD7C84611550A3AB00CC13B9 /* AppDelegate.m */,
 				DD7C84631550A3AB00CC13B9 /* MainStoryboard_iPhone.storyboard */,
-				DD7C84661550A3AB00CC13B9 /* MainStoryboard_iPad.storyboard */,
 				DD7C84691550A3AB00CC13B9 /* ViewController.h */,
 				DD7C846A1550A3AB00CC13B9 /* ViewController.m */,
+				DDE016DC155127F20017DD2C /* CheckerView.h */,
+				DDE016DD155127F20017DD2C /* CheckerView.m */,
 				DD7C84581550A3AB00CC13B9 /* Supporting Files */,
 				DD7C84891550A5F200CC13B9 /* Board.h */,
 				DD7C848A1550A5F200CC13B9 /* Board.m */,
@@ -232,7 +234,6 @@
 			files = (
 				DD7C845C1550A3AB00CC13B9 /* InfoPlist.strings in Resources */,
 				DD7C84651550A3AB00CC13B9 /* MainStoryboard_iPhone.storyboard in Resources */,
-				DD7C84681550A3AB00CC13B9 /* MainStoryboard_iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +272,7 @@
 				DD7C84621550A3AB00CC13B9 /* AppDelegate.m in Sources */,
 				DD7C846B1550A3AB00CC13B9 /* ViewController.m in Sources */,
 				DD7C848B1550A5F200CC13B9 /* Board.m in Sources */,
+				DDE016DE155127F20017DD2C /* CheckerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,14 +309,6 @@
 				DD7C84641550A3AB00CC13B9 /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		DD7C84661550A3AB00CC13B9 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DD7C84671550A3AB00CC13B9 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		DD7C847B1550A3AB00CC13B9 /* InfoPlist.strings */ = {
@@ -450,6 +444,7 @@
 				DD7C84851550A3AB00CC13B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD7C84861550A3AB00CC13B9 /* Build configuration list for PBXNativeTarget "CheckersTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +453,7 @@
 				DD7C84881550A3AB00CC13B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -3,7 +3,6 @@
 //  Checkers
 //
 //  Created by William Chieng on 5/1/12.
-//  Copyright (c) 2012 University of California, Berkeley. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -23,8 +22,10 @@ typedef enum {
 
 @interface Board : NSObject {
     int** board;
+    NSMutableArray *captured;
 }
 
 - (BOOL) movePieceFrom: (boardLocation) start to: (boardLocation) dest by: (int) player;
+- (boardLocation *) getCapturedPieces;
 
 @end

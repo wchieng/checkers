@@ -2,8 +2,7 @@
 //  Board.m
 //  Checkers
 //
-//  Created by William Chieng on 5/1/12.
-//  Copyright (c) 2012 University of California, Berkeley. All rights reserved.
+//  Created by William Chieng on 5/1/12.  
 //
 
 #import "Board.h"
@@ -15,6 +14,7 @@
         for (int i=0; i<8; i++) {
             board[i] = calloc(8, sizeof(BoardPiece));
         }
+        captured = NULL;
     }
     return self;
 }
@@ -27,9 +27,55 @@
     board[loc.x][loc.y] = piece;
 }
 
+- (BOOL) boardLocEqual: (boardLocation) loc1 to: (boardLocation) loc2 {
+    if (loc1.x == loc2.x && loc1.y == loc2.y) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 - (BOOL) hasPathFromStart: (boardLocation) start to: (boardLocation) end using: (BoardPiece) piece {
-    //TODO: DO THIS.
-    return YES;
+    //TODO: FINISH THIS
+    boardLocation currentLoc = start;
+    
+    switch (piece) {
+        case BoardPieceWKing:
+            return NO;
+            break;
+        
+        case BoardPieceWhite:
+            //while (![self boardLocEqual: currentLoc to: end]) {
+            //}
+            if (end.y - start.y == -2) {
+                if (end.x - start.x == 2) {
+                    // Diagonal forward right
+                    
+                } else if (end.x - start.x == -2) {
+                    // Diagonal forward left
+                    
+                }
+                return NO;
+            }
+            break;
+        
+        case BoardPieceBKing:
+            return NO;
+            break;
+        
+        case BoardPieceBlack:
+            
+            break;
+        
+        default:
+            return NO;
+            break;
+    }
+    return NO;
+}
+
+- (void) addCapturedPiece: (boardLocation) loc {
+    
 }
 
 // Returns YES if it was a valid move; else NO
@@ -59,7 +105,7 @@
             return NO;
         }
         // Case: No moving backwards if not king
-        if (dest.y - start.y <= 0) {
+        if (dest.y <= start.y) {
             if (piece == BoardPieceWhite) {
                 return NO;
             }
@@ -70,7 +116,7 @@
             return NO;
         }
         // Case: No moving backwards if not king
-        if (start.y - dest.y >= 0) {
+        if (start.y <= dest.y) {
             if (piece == BoardPieceBlack) {
                 return NO;
             }
@@ -87,6 +133,10 @@
     
     // Case: Captures
     if ([self hasPathFromStart:start to:dest using: piece]) {
+        // Do stuff
+        [self setBoardPiece:piece AtLoc:dest];
+        [self setBoardPiece:BoardPieceEmpty AtLoc:start];
+        
         return YES;
     }
 
