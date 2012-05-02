@@ -41,6 +41,7 @@
     
     switch (piece) {
         case BoardPieceWKing:
+            // Will implement later
             return NO;
             break;
         
@@ -76,11 +77,35 @@
             break;
         
         case BoardPieceBKing:
+            // Will implement later
             return NO;
             break;
         
         case BoardPieceBlack:
-            
+            if (end.y - start.y == 2) {
+                if (end.x - start.x == 2) {
+                    // Down right
+                    boardLocation nearLoc;
+                    nearLoc.x = start.x+1;
+                    nearLoc.y = start.y+1;
+                    if ([self getBoardPieceAtLoc: nearLoc] == BoardPieceWhite || [self getBoardPieceAtLoc: nearLoc] == BoardPieceWKing) {
+                        // Capture the enemy!
+                        [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
+                        return YES;
+                    }
+                } else if (end.x - start.x == -2) {
+                    // Down left
+                    boardLocation nearLoc;
+                    nearLoc.x = start.x-1;
+                    nearLoc.y = start.y+1;
+                    if ([self getBoardPieceAtLoc: nearLoc] == BoardPieceWhite || [self getBoardPieceAtLoc: nearLoc] == BoardPieceWKing) {
+                        // Capture the enemy!
+                        [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
+                        return YES;
+                    }
+                }
+            }
+            return NO;
             break;
         
         default:
