@@ -16,13 +16,15 @@ typedef struct {
 typedef enum {
     BoardPieceEmpty = 0,
     BoardPieceWhite = 1,
-    BoardPieceBlack = 2
+    BoardPieceWKing = 2,
+    BoardPieceBlack = 3,
+    BoardPieceBKing = 4
 } BoardPiece;
 
 @interface Board : NSObject {
     int** board;
 }
 
-- (BOOL) makeMoveFrom: (boardLocation) start to: (boardLocation) dest by: (int) player;
+- (BOOL) movePieceFrom: (boardLocation) start to: (boardLocation) dest by: (int) player;
 
 @end
