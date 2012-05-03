@@ -100,7 +100,7 @@
                         nextRightDest.x = end.x+2;
                         nextRightDest.y = end.y-2;
                         
-                        if (([self getBoardPieceAtLoc:nextLocLeft] == BoardPieceBlack && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || ([self getBoardPieceAtLoc:nextLocRight] == BoardPieceBlack && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
+                        if ((nextLocLeft.x >= 0 && nextLocLeft.y >= 0 && nextLeftDest.x >= 0 && nextLeftDest.y >= 0 && [self getBoardPieceAtLoc:nextLocLeft] == BoardPieceBlack && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || (nextLocRight.x < 8 && nextLocRight.y >= 0 && nextRightDest.x < 8 && nextRightDest.y >= 0 && [self getBoardPieceAtLoc:nextLocRight] == BoardPieceBlack && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
                             turn = !turn;
                         }
                         
@@ -134,7 +134,7 @@
                         nextRightDest.x = end.x+2;
                         nextRightDest.y = end.y-2;
                         
-                        if (([self getBoardPieceAtLoc:nextLocLeft] == BoardPieceBlack && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || ([self getBoardPieceAtLoc:nextLocRight] == BoardPieceBlack && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
+                        if ((nextLocLeft.x >= 0 && nextLocLeft.y >= 0 && nextLeftDest.x >= 0 && nextLeftDest.y >= 0 && [self getBoardPieceAtLoc:nextLocLeft] == BoardPieceBlack && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || (nextLocRight.x < 8 && nextLocRight.y >= 0 && nextRightDest.x < 8 && nextRightDest.y >= 0 && [self getBoardPieceAtLoc:nextLocRight] == BoardPieceBlack && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
                             turn = !turn;
                         }
                         
@@ -179,7 +179,7 @@
                         nextRightDest.x = end.x+2;
                         nextRightDest.y = end.y+2;
                         
-                        if (([self getBoardPieceAtLoc:nextLocLeft] == BoardPieceWhite && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || ([self getBoardPieceAtLoc:nextLocRight] == BoardPieceWhite && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
+                        if ((nextLocLeft.x >= 0 && nextLocLeft.y < 8 && nextLeftDest.x >= 0 && nextLeftDest.y < 8 && [self getBoardPieceAtLoc:nextLocLeft] == BoardPieceWhite && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || (nextLocRight.x < 8 && nextLocRight.y < 8 && nextRightDest.x < 8 && nextRightDest.y < 8 && [self getBoardPieceAtLoc:nextLocRight] == BoardPieceWhite && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
                             turn = !turn;
                         }
                         
@@ -212,7 +212,7 @@
                         nextRightDest.x = end.x+2;
                         nextRightDest.y = end.y+2;
                         
-                        if (([self getBoardPieceAtLoc:nextLocLeft] == BoardPieceWhite && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || ([self getBoardPieceAtLoc:nextLocRight] == BoardPieceWhite && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
+                        if ((nextLocLeft.x >= 0 && nextLocLeft.y < 8 && nextLeftDest.x >= 0 && nextLeftDest.y < 8 && [self getBoardPieceAtLoc:nextLocLeft] == BoardPieceWhite && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || (nextLocRight.x < 8 && nextLocRight.y < 8 && nextRightDest.x < 8 && nextRightDest.y < 8 &&[self getBoardPieceAtLoc:nextLocRight] == BoardPieceWhite && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
                             turn = !turn;
                         }
                         
