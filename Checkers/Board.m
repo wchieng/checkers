@@ -37,7 +37,7 @@
 
 - (BOOL) hasPathFromStart: (boardLocation) start to: (boardLocation) end using: (BoardPiece) piece {
     //TODO: FINISH THIS
-    boardLocation currentLoc = start;
+    //boardLocation currentLoc = start;
     
     switch (piece) {
         case BoardPieceWKing:
@@ -183,6 +183,10 @@
 
     // All else fails
     return NO;
+}
+
+- (int **) getBoard {
+    return board;
 }
 
 @end
