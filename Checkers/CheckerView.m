@@ -57,7 +57,7 @@
             if (currentBoard[row][column] == BoardPieceBlack) {
                 CGContextSetRGBFillColor(context, 0, 0, 0, 1); // black
             } else if (currentBoard[row][column] == BoardPieceWhite) {
-                CGContextSetRGBFillColor(context, 1, 1, 1, 1); // white
+                CGContextSetRGBFillColor(context, 1, 0, 0, 1); // white
             }
             
             boardLocation loc; 
@@ -70,5 +70,36 @@
     
 }
 
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"Touches began");
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self];
+    NSLog(@"Touch at: (%f,%f)", location.x, location.y);
+    
+    // Transform pixel coordinates to board coordinates
+    boardLocation loc;
+    loc.x = (int) floorf(location.x/40);
+    loc.y = (int) floorf(location.y/40);
+    NSLog(@"Touch at: (%d, %d)", loc.x, loc.y);
+    
+    currentPieceInMotion = [[self board] getBoardPieceAtLoc:loc];
+}
+
+- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"Touches moved");
+    UITouch *touch = [touches anyObject];
+    if (currentPieceInMotion != BoardPieceEmpty) {
+        NSLog(@"Drawing piece in motion");
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
+    }
+    
+}
+
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"Touches ended");
+    currentPieceInMotion = BoardPieceEmpty;
+}
 
 @end
