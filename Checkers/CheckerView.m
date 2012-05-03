@@ -64,7 +64,7 @@
             if (currentBoard[column][row] == BoardPieceBlack) {
                 CGContextSetRGBFillColor(context, 0, 0, 0, 1); // black
             } else if (currentBoard[column][row] == BoardPieceWhite) {
-                CGContextSetRGBFillColor(context, 1, 0, 0, 1); // white
+                CGContextSetRGBFillColor(context, 1, 1, 1, 1); // white
             }
             
             boardLocation loc; 
@@ -72,18 +72,20 @@
             loc.y = row;
             PixelCoordinates pixCoord = [self getPixelCoordinatesFrom:loc];
             CGContextFillEllipseInRect(context, CGRectMake(pixCoord.x, pixCoord.y, 40, 40));
+            CGContextStrokeEllipseInRect(context, CGRectMake(pixCoord.x, pixCoord.y, 40, 40));
         }
     }
     
     // Draw a circle being "dragged" with finger if actually dragging
     if (currentPieceInMotion != BoardPieceEmpty) {
         if (currentPieceInMotion == BoardPieceWhite) {
-            CGContextSetRGBFillColor(context, 1, 0, 0, 1);
+            CGContextSetRGBFillColor(context, 1, 1, 1, 1);
         } else {
             CGContextSetRGBFillColor(context, 0, 0, 0, 1);
         }
         
         CGContextFillEllipseInRect(context, CGRectMake(motionLocX, motionLocY, 40, 40));
+        CGContextStrokeEllipseInRect(context, CGRectMake(motionLocX, motionLocY, 40, 40));
     }
 }
 

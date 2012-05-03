@@ -236,7 +236,7 @@
 
 // Returns YES if it was a valid move; else NO
 - (BOOL) movePieceFrom: (boardLocation)start to: (boardLocation)dest by: (int) player {
-    
+    // For singleplayer
     player = turn;
     
     if ([self isGameOver]) {

@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Checkers/Board.m"
-         timestampString = "357735979.495786"
+         timestampString = "357737956.355934"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "255"
-         endingLineNumber = "255"
+         startingLineNumber = "274"
+         endingLineNumber = "274"
          landmarkName = "-movePieceFrom:to:by:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Checkers/Board.m"
-         timestampString = "357735979.495786"
+         timestampString = "357737956.355934"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "252"
-         endingLineNumber = "252"
+         startingLineNumber = "271"
+         endingLineNumber = "271"
          landmarkName = "-movePieceFrom:to:by:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Checkers/Board.m"
-         timestampString = "357735979.495786"
+         timestampString = "357737956.355934"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "257"
-         endingLineNumber = "257"
+         startingLineNumber = "276"
+         endingLineNumber = "276"
          landmarkName = "-movePieceFrom:to:by:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Checkers/Board.m"
-         timestampString = "357735979.495786"
+         timestampString = "357737956.355934"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "278"
-         endingLineNumber = "278"
+         startingLineNumber = "297"
+         endingLineNumber = "297"
          landmarkName = "-movePieceFrom:to:by:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Checkers/Board.m"
-         timestampString = "357735979.495786"
+         timestampString = "357737956.355934"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "285"
-         endingLineNumber = "285"
+         startingLineNumber = "304"
+         endingLineNumber = "304"
          landmarkName = "-movePieceFrom:to:by:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,38 +73,64 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Checkers/Board.m"
-         timestampString = "357735979.495786"
+         timestampString = "357737956.355934"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "281"
-         endingLineNumber = "281"
+         startingLineNumber = "300"
+         endingLineNumber = "300"
          landmarkName = "-movePieceFrom:to:by:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Checkers/Board.m"
-         timestampString = "357735979.495786"
+         timestampString = "357737956.355934"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "163"
-         endingLineNumber = "163"
+         startingLineNumber = "182"
+         endingLineNumber = "182"
          landmarkName = "-hasPathFromStart:to:using:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Checkers/Board.m"
-         timestampString = "357735979.495786"
+         timestampString = "357737956.355934"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "164"
-         endingLineNumber = "164"
+         startingLineNumber = "183"
+         endingLineNumber = "183"
          landmarkName = "-hasPathFromStart:to:using:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Checkers/Board.m"
+         timestampString = "357736145.148422"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "182"
+         endingLineNumber = "182"
+         landmarkName = "-hasPathFromStart:to:using:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Checkers/GCHelper.m"
+         timestampString = "357740681.544439"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "27"
+         endingLineNumber = "27"
+         landmarkName = "-isGameCenterAvailable"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

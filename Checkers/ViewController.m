@@ -28,13 +28,13 @@
     CGRect topRect = CGRectMake(0, 0, 320, 70);
     UIView *topBar = [[UIView alloc] initWithFrame:topRect];
     topBar.backgroundColor = [UIColor grayColor];
-    [[self view] addSubview:topBar];
+    //[[self view] addSubview:topBar];
     
     // Bottom Bar
     CGRect bottomRect = CGRectMake(0, 390, 320, 70);
     UIView *botBar = [[UIView alloc] initWithFrame:bottomRect];
     botBar.backgroundColor = [UIColor grayColor];
-    [[self view] addSubview:botBar];
+    //[[self view] addSubview:botBar];
     
     // Checkerboard
     CGRect checkerRect = CGRectMake(0, 70, 320, 320);

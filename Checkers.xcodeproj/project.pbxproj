@@ -23,6 +23,7 @@
 		DD7C84801550A3AB00CC13B9 /* CheckersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7C847F1550A3AB00CC13B9 /* CheckersTests.m */; };
 		DD7C848B1550A5F200CC13B9 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7C848A1550A5F200CC13B9 /* Board.m */; };
 		DD9A55F41552955E00E7438A /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9A55F31552955E00E7438A /* GCHelper.m */; };
+		DD9A55F71552B06D00E7438A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9A55F61552B06D00E7438A /* GameKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		DD7C848A1550A5F200CC13B9 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
 		DD9A55F21552955E00E7438A /* GCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelper.h; sourceTree = "<group>"; };
 		DD9A55F31552955E00E7438A /* GCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelper.m; sourceTree = "<group>"; };
+		DD9A55F61552B06D00E7438A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD9A55F71552B06D00E7438A /* GameKit.framework in Frameworks */,
 				DD7C84521550A3AB00CC13B9 /* UIKit.framework in Frameworks */,
 				DD7C84541550A3AB00CC13B9 /* Foundation.framework in Frameworks */,
 				DD7C84561550A3AB00CC13B9 /* CoreGraphics.framework in Frameworks */,
@@ -90,6 +93,7 @@
 		DD7C84421550A3AB00CC13B9 = {
 			isa = PBXGroup;
 			children = (
+				DD9A55F61552B06D00E7438A /* GameKit.framework */,
 				DD7C84571550A3AB00CC13B9 /* Checkers */,
 				DD7C84781550A3AB00CC13B9 /* CheckersTests */,
 				DD7C84501550A3AB00CC13B9 /* Frameworks */,
