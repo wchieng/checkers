@@ -27,6 +27,9 @@ typedef enum {
     int** board;
     NSMutableArray *captured;
     ViewController *_viewController;
+    
+    int whiteCapturedCount; // Amount white player captured
+    int blackCapturedCount; // Amount black player captured
 }
 
 - (BOOL) movePieceFrom: (boardLocation) start to: (boardLocation) dest by: (int) player;

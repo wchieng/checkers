@@ -36,6 +36,8 @@
         }
         
         captured = NULL;
+        whiteCapturedCount = 0;
+        blackCapturedCount = 0;
     }
     return self;
 }
@@ -67,8 +69,6 @@
             break;
         
         case BoardPieceWhite:
-            //while (![self boardLocEqual: currentLoc to: end]) {
-            //}
             if (end.y - start.y == -2) {
                 if (end.x - start.x == 2) {
                     // Diagonal forward right
@@ -79,6 +79,7 @@
                     if ([self getBoardPieceAtLoc: nearLoc] == BoardPieceBlack || [self getBoardPieceAtLoc: nearLoc] == BoardPieceBKing) {
                         // Capture the enemy!
                         [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
+                        whiteCapturedCount += 1;
                         return YES;
                     }
                 } else if (end.x - start.x == -2) {
@@ -90,6 +91,7 @@
                     if ([self getBoardPieceAtLoc: nearLoc] == BoardPieceBlack || [self getBoardPieceAtLoc: nearLoc] == BoardPieceBKing) {
                         // Capture the enemy!
                         [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
+                        whiteCapturedCount += 1;
                         return YES;
                     }
                 }
@@ -112,6 +114,7 @@
                     if ([self getBoardPieceAtLoc: nearLoc] == BoardPieceWhite || [self getBoardPieceAtLoc: nearLoc] == BoardPieceWKing) {
                         // Capture the enemy!
                         [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
+                        blackCapturedCount += 1;
                         return YES;
                     }
                 } else if (end.x - start.x == -2) {
@@ -122,6 +125,7 @@
                     if ([self getBoardPieceAtLoc: nearLoc] == BoardPieceWhite || [self getBoardPieceAtLoc: nearLoc] == BoardPieceWKing) {
                         // Capture the enemy!
                         [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
+                        blackCapturedCount += 1;
                         return YES;
                     }
                 }
@@ -163,7 +167,7 @@
     
     if (player == 0) {
         // White Player
-        if (piece > 3) {
+        if (piece > 2) {
             return NO;
         }
         // Case: No moving backwards if not king

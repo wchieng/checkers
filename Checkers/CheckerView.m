@@ -51,6 +51,10 @@
     // Draw checker pieces onto board
     for (int row=0; row<8; row++) {
         for (int column=0; column<8; column++) {
+            // Don't draw this checker piece if it's being moved
+            if (currentPieceInMotion != BoardPieceEmpty && column == touchStartX && row == touchStartY) {
+                continue;
+            }
             if (currentBoard[column][row] == BoardPieceEmpty) {
                 continue;
             }
@@ -98,7 +102,7 @@
     touchStartY = loc.y;
     
     currentPieceInMotion = [[self board] getBoardPieceAtLoc:loc];
-    NSLog(@"CurrentPieceInMotion: %d", currentPieceInMotion);
+    //NSLog(@"CurrentPieceInMotion: %d", currentPieceInMotion);
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
