@@ -13,7 +13,9 @@
 @end
 
 @implementation ViewController
+
 @synthesize board = _board;
+@synthesize player = _player;
 
 - (void)viewDidLoad
 {
@@ -41,6 +43,9 @@
     [checkerView setViewController:self];
     checkerView.backgroundColor = [UIColor colorWithRed:0.06 green:0.3 blue:0.57 alpha:1];
     [[self view] addSubview:checkerView];
+    
+    // Placeholder
+    [self setPlayer:0];
 }
 
 - (void)viewDidUnload
@@ -68,7 +73,7 @@
     dest.x = destX;
     dest.y = destY;
     
-    return [[self board] movePieceFrom:start to:dest by:1];
+    return [[self board] movePieceFrom:start to:dest by:[self player]];
 }
 
 @end

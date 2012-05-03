@@ -30,11 +30,15 @@ typedef enum {
     
     int whiteCapturedCount; // Amount white player captured
     int blackCapturedCount; // Amount black player captured
+    
+    int turn;
 }
 
 - (BOOL) movePieceFrom: (boardLocation) start to: (boardLocation) dest by: (int) player;
 //- (boardLocation *) getCapturedPieces;
 - (int **) getBoard;
 - (BoardPiece) getBoardPieceAtLoc: (boardLocation) loc;
+- (BOOL) isGameOver;
+- (int) winner;
 
 @end

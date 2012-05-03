@@ -19,8 +19,10 @@ typedef struct {
 @interface ViewController : UIViewController {
     Board *_board;
     CheckerView *_checkerView;
+    int _player; // 0 if white, 1 if black
 }
 @property (nonatomic, retain) Board* board;
+@property (nonatomic) int player;
 
 - (BOOL) makeMoveFromX: (int)startX Y: (int)startY toNewX: (int) destX newY: (int) destY;
 

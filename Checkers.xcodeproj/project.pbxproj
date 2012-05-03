@@ -22,6 +22,7 @@
 		DD7C847D1550A3AB00CC13B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD7C847B1550A3AB00CC13B9 /* InfoPlist.strings */; };
 		DD7C84801550A3AB00CC13B9 /* CheckersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7C847F1550A3AB00CC13B9 /* CheckersTests.m */; };
 		DD7C848B1550A5F200CC13B9 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7C848A1550A5F200CC13B9 /* Board.m */; };
+		DD9A55F41552955E00E7438A /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9A55F31552955E00E7438A /* GCHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		DD7C847F1550A3AB00CC13B9 /* CheckersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckersTests.m; sourceTree = "<group>"; };
 		DD7C84891550A5F200CC13B9 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		DD7C848A1550A5F200CC13B9 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		DD9A55F21552955E00E7438A /* GCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelper.h; sourceTree = "<group>"; };
+		DD9A55F31552955E00E7438A /* GCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				DD7C84581550A3AB00CC13B9 /* Supporting Files */,
 				DD7C84891550A5F200CC13B9 /* Board.h */,
 				DD7C848A1550A5F200CC13B9 /* Board.m */,
+				DD9A55F21552955E00E7438A /* GCHelper.h */,
+				DD9A55F31552955E00E7438A /* GCHelper.m */,
 			);
 			path = Checkers;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				DD7C846B1550A3AB00CC13B9 /* ViewController.m in Sources */,
 				DD7C848B1550A5F200CC13B9 /* Board.m in Sources */,
 				DD110BD9155218A0003B098D /* CheckerView.m in Sources */,
+				DD9A55F41552955E00E7438A /* GCHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

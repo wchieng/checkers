@@ -38,6 +38,8 @@
         captured = NULL;
         whiteCapturedCount = 0;
         blackCapturedCount = 0;
+        
+        turn = 0; // white goes first, I guess
     }
     return self;
 }
@@ -80,6 +82,28 @@
                         // Capture the enemy!
                         [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
                         whiteCapturedCount += 1;
+                        
+                        // Check to see if you can make another capture
+                        boardLocation nextLocLeft;
+                        nextLocLeft.x = end.x-1;
+                        nextLocLeft.y = end.y-1;
+                        
+                        boardLocation nextLeftDest;
+                        nextLeftDest.x = end.x-2;
+                        nextLeftDest.y = end.y-2;
+                        
+                        boardLocation nextLocRight;
+                        nextLocRight.x = end.x+1;
+                        nextLocRight.y = end.y-1;
+                        
+                        boardLocation nextRightDest;
+                        nextRightDest.x = end.x+2;
+                        nextRightDest.y = end.y-2;
+                        
+                        if (([self getBoardPieceAtLoc:nextLocLeft] == BoardPieceBlack && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || ([self getBoardPieceAtLoc:nextLocRight] == BoardPieceBlack && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
+                            turn = !turn;
+                        }
+                        
                         return YES;
                     }
                 } else if (end.x - start.x == -2) {
@@ -92,6 +116,28 @@
                         // Capture the enemy!
                         [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
                         whiteCapturedCount += 1;
+                        
+                        // Check to see if you can make another capture
+                        boardLocation nextLocLeft;
+                        nextLocLeft.x = end.x-1;
+                        nextLocLeft.y = end.y-1;
+                        
+                        boardLocation nextLeftDest;
+                        nextLeftDest.x = end.x-2;
+                        nextLeftDest.y = end.y-2;
+                        
+                        boardLocation nextLocRight;
+                        nextLocRight.x = end.x+1;
+                        nextLocRight.y = end.y-1;
+                        
+                        boardLocation nextRightDest;
+                        nextRightDest.x = end.x+2;
+                        nextRightDest.y = end.y-2;
+                        
+                        if (([self getBoardPieceAtLoc:nextLocLeft] == BoardPieceBlack && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || ([self getBoardPieceAtLoc:nextLocRight] == BoardPieceBlack && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
+                            turn = !turn;
+                        }
+                        
                         return YES;
                     }
                 }
@@ -115,6 +161,28 @@
                         // Capture the enemy!
                         [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
                         blackCapturedCount += 1;
+                        
+                        // Check to see if you can make another capture
+                        boardLocation nextLocLeft;
+                        nextLocLeft.x = end.x-1;
+                        nextLocLeft.y = end.y+1;
+                        
+                        boardLocation nextLeftDest;
+                        nextLeftDest.x = end.x-2;
+                        nextLeftDest.y = end.y+2;
+                        
+                        boardLocation nextLocRight;
+                        nextLocRight.x = end.x+1;
+                        nextLocRight.y = end.y+1;
+                        
+                        boardLocation nextRightDest;
+                        nextRightDest.x = end.x+2;
+                        nextRightDest.y = end.y+2;
+                        
+                        if (([self getBoardPieceAtLoc:nextLocLeft] == BoardPieceWhite && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || ([self getBoardPieceAtLoc:nextLocRight] == BoardPieceWhite && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
+                            turn = !turn;
+                        }
+                        
                         return YES;
                     }
                 } else if (end.x - start.x == -2) {
@@ -126,6 +194,28 @@
                         // Capture the enemy!
                         [self setBoardPiece:BoardPieceEmpty AtLoc:nearLoc];
                         blackCapturedCount += 1;
+                        
+                        // Check to see if you can make another capture
+                        boardLocation nextLocLeft;
+                        nextLocLeft.x = end.x-1;
+                        nextLocLeft.y = end.y+1;
+                        
+                        boardLocation nextLeftDest;
+                        nextLeftDest.x = end.x-2;
+                        nextLeftDest.y = end.y+2;
+                        
+                        boardLocation nextLocRight;
+                        nextLocRight.x = end.x+1;
+                        nextLocRight.y = end.y+1;
+                        
+                        boardLocation nextRightDest;
+                        nextRightDest.x = end.x+2;
+                        nextRightDest.y = end.y+2;
+                        
+                        if (([self getBoardPieceAtLoc:nextLocLeft] == BoardPieceWhite && [self getBoardPieceAtLoc:nextLeftDest] == BoardPieceEmpty) || ([self getBoardPieceAtLoc:nextLocRight] == BoardPieceWhite && [self getBoardPieceAtLoc:nextRightDest] == BoardPieceEmpty)) {
+                            turn = !turn;
+                        }
+                        
                         return YES;
                     }
                 }
@@ -147,6 +237,12 @@
 // Returns YES if it was a valid move; else NO
 - (BOOL) movePieceFrom: (boardLocation)start to: (boardLocation)dest by: (int) player {
     
+    player = turn;
+    
+    if ([self isGameOver]) {
+        return NO;
+    }
+    
     BoardPiece piece = [self getBoardPieceAtLoc:start];
     BoardPiece destPiece = [self getBoardPieceAtLoc:dest];
     
@@ -167,6 +263,10 @@
     
     if (player == 0) {
         // White Player
+        if (turn == 1) {
+            return NO;
+        }
+        // Trying to move a black piece
         if (piece > 2) {
             return NO;
         }
@@ -178,6 +278,10 @@
         }
     } else {
         // Black Player
+        if (turn == 0) {
+            return NO;
+        }
+        // Trying to move a white piece
         if (piece < 3) {
             return NO;
         }
@@ -194,6 +298,9 @@
         // Moving backwards already checked above
         [self setBoardPiece:piece AtLoc:dest];
         [self setBoardPiece:BoardPieceEmpty AtLoc:start];
+        
+        turn = !turn;
+        
         return YES;
     }
     
@@ -202,6 +309,8 @@
         // Do stuff
         [self setBoardPiece:piece AtLoc:dest];
         [self setBoardPiece:BoardPieceEmpty AtLoc:start];
+        
+        turn = !turn;
         
         return YES;
     }
@@ -212,6 +321,21 @@
 
 - (int **) getBoard {
     return board;
+}
+
+- (BOOL) isGameOver {
+    return (whiteCapturedCount == 12 || blackCapturedCount == 12);
+}
+
+- (int) winner {
+    if (![self isGameOver]) {
+        return -1;
+    }
+    if (whiteCapturedCount == 12) {
+        return 0;
+    } else {
+        return 1;
+    }
 }
 
 @end
