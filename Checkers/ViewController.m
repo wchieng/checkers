@@ -20,7 +20,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    _board = [[Board alloc] init];
+    [self setBoard: [[Board alloc] init]];
     
     // Top Bar
     CGRect topRect = CGRectMake(0, 0, 320, 70);
@@ -38,6 +38,7 @@
     CGRect checkerRect = CGRectMake(0, 70, 320, 320);
     CheckerView *checkerView = [[CheckerView alloc] initWithFrame:checkerRect];
     [checkerView setBoard:[self board]];
+    [checkerView setViewController:self];
     checkerView.backgroundColor = [UIColor colorWithRed:0.06 green:0.3 blue:0.57 alpha:1];
     [[self view] addSubview:checkerView];
 }
@@ -58,7 +59,7 @@
 }
 
 // Regretting a few design decisions...
-- (BOOL) makeMoveFromX:(int)startX Y:(int)startY toNewX:(int)destX newY:(int)destY by:(int)player {
+- (BOOL) makeMoveFromX:(int)startX Y:(int)startY toNewX:(int)destX newY:(int)destY {
     boardLocation start;
     start.x = startX;
     start.y = startY;
@@ -67,7 +68,7 @@
     dest.x = destX;
     dest.y = destY;
     
-    return [[self board] movePieceFrom:start to:dest by:player];
+    return [[self board] movePieceFrom:start to:dest by:1];
 }
 
 @end

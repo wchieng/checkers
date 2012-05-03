@@ -33,7 +33,7 @@ typedef enum {
 }
 
 - (BOOL) movePieceFrom: (boardLocation) start to: (boardLocation) dest by: (int) player;
-- (boardLocation *) getCapturedPieces;
+//- (boardLocation *) getCapturedPieces;
 - (int **) getBoard;
 - (BoardPiece) getBoardPieceAtLoc: (boardLocation) loc;
 

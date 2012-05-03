@@ -8,7 +8,10 @@
 #import "CheckerView.h"
 
 @implementation CheckerView
+
 @synthesize board = _board;
+@synthesize viewController = _viewController;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -140,7 +143,7 @@
     dest.x = (int) floorf(location.x/40);
     dest.y = (int) floorf(location.y/40);
     
-    [[self board] movePieceFrom:start to:dest by:0];
+    [[self viewController] makeMoveFromX:touchStartX Y:touchStartY toNewX:dest.x newY:dest.y];
     
     currentPieceInMotion = BoardPieceEmpty;
     [self setNeedsDisplay];
