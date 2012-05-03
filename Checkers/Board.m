@@ -19,7 +19,7 @@
         for (int row=0; row<3; row++) {
             for (int column=0; column<8; column++) {
                 if (row%2 != column%2) {
-                    board[row][column] = BoardPieceBlack;
+                    board[column][row] = BoardPieceBlack;
                 }
             }
         }
@@ -28,7 +28,7 @@
         for (int row=5; row<8; row++) {
             for (int column=0; column<8; column++) {
                 if (row%2 != column%2) {
-                    board[row][column] = BoardPieceWhite;
+                    board[column][row] = BoardPieceWhite;
                 }
             }
         }

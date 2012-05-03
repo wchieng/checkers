@@ -51,12 +51,12 @@
     
     for (int row=0; row<8; row++) {
         for (int column=0; column<8; column++) {
-            if (currentBoard[row][column] == BoardPieceEmpty) {
+            if (currentBoard[column][row] == BoardPieceEmpty) {
                 continue;
             }
-            if (currentBoard[row][column] == BoardPieceBlack) {
+            if (currentBoard[column][row] == BoardPieceBlack) {
                 CGContextSetRGBFillColor(context, 0, 0, 0, 1); // black
-            } else if (currentBoard[row][column] == BoardPieceWhite) {
+            } else if (currentBoard[column][row] == BoardPieceWhite) {
                 CGContextSetRGBFillColor(context, 1, 0, 0, 1); // white
             }
             
@@ -84,6 +84,7 @@
     NSLog(@"Touch at: (%d, %d)", loc.x, loc.y);
     
     currentPieceInMotion = [[self board] getBoardPieceAtLoc:loc];
+    NSLog(@"CurrentPieceInMotion: %d", currentPieceInMotion);
 }
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
