@@ -49,6 +49,7 @@
 
     int **currentBoard = [_board getBoard];
     
+    // Draw checker pieces onto board
     for (int row=0; row<8; row++) {
         for (int column=0; column<8; column++) {
             if (currentBoard[column][row] == BoardPieceEmpty) {
@@ -68,6 +69,16 @@
         }
     }
     
+    // Draw a circle being "dragged" with finger if actually dragging
+    if (currentPieceInMotion != BoardPieceEmpty) {
+        if (currentPieceInMotion == BoardPieceWhite) {
+            CGContextSetRGBFillColor(context, 1, 0, 0, 1);
+        } else {
+            CGContextSetRGBFillColor(context, 0, 0, 0, 1);
+        }
+        
+        CGContextFillEllipseInRect(context, CGRectMake(motionLocX, motionLocY, 40, 40));
+    }
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -75,7 +86,7 @@
     
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:self];
-    NSLog(@"Touch at: (%f,%f)", location.x, location.y);
+    //NSLog(@"Touch at: (%f,%f)", location.x, location.y);
     
     // Transform pixel coordinates to board coordinates
     boardLocation loc;
@@ -90,12 +101,22 @@
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"Touches moved");
     UITouch *touch = [touches anyObject];
-    if (currentPieceInMotion != BoardPieceEmpty) {
-        NSLog(@"Drawing piece in motion");
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
+    CGPoint location = [touch locationInView:self];
+    
+    // Center the circle drawing, since every circle has a 20-pixel radius
+    motionLocX = location.x-20;
+    motionLocY = location.y-20;
+    
+    // Prevent coordinates from going negative
+    if (motionLocX < 0) {
+        motionLocX = 0;
+    }
+    if (motionLocY < 0) {
+        motionLocY = 0;
     }
     
+    // Redraw view
+    [self setNeedsDisplay];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {

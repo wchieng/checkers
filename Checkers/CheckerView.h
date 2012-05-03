@@ -15,6 +15,8 @@
 @interface CheckerView : UIView {
     Board *_board;
     int currentPieceInMotion;
+    CGFloat motionLocX;
+    CGFloat motionLocY;
 }
 @property (nonatomic, retain) Board *board;
 @end
