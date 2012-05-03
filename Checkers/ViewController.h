@@ -20,5 +20,6 @@ typedef struct {
     Board *_board;
     CheckerView *_checkerView;
 }
+@property (nonatomic, retain) Board* board;
 
 @end

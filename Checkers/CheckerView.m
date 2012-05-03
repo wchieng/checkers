@@ -9,7 +9,7 @@
 #import "CheckerView.h"
 
 @implementation CheckerView
-
+@synthesize board = _board;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -51,21 +51,20 @@
     
     for (int row=0; row<8; row++) {
         for (int column=0; column<8; column++) {
+            if (currentBoard[row][column] == BoardPieceEmpty) {
+                continue;
+            }
             if (currentBoard[row][column] == BoardPieceBlack) {
                 CGContextSetRGBFillColor(context, 0, 0, 0, 1); // black
-                boardLocation loc; 
-                loc.x = row;
-                loc.y = column;
-                PixelCoordinates pixCoord = [self getPixelCoordinatesFrom:loc];
-                CGContextFillEllipseInRect(context, CGRectMake(pixCoord.x, pixCoord.y, 40, 40));
             } else if (currentBoard[row][column] == BoardPieceWhite) {
                 CGContextSetRGBFillColor(context, 1, 1, 1, 1); // white
-                boardLocation loc; 
-                loc.x = row;
-                loc.y = column;
-                PixelCoordinates pixCoord = [self getPixelCoordinatesFrom:loc];
-                CGContextFillEllipseInRect(context, CGRectMake(pixCoord.x, pixCoord.y, 40, 40));
             }
+            
+            boardLocation loc; 
+            loc.x = column;
+            loc.y = row;
+            PixelCoordinates pixCoord = [self getPixelCoordinatesFrom:loc];
+            CGContextFillEllipseInRect(context, CGRectMake(pixCoord.x, pixCoord.y, 40, 40));
         }
     }
     

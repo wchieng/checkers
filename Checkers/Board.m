@@ -14,6 +14,25 @@
         for (int i=0; i<8; i++) {
             board[i] = calloc(8, sizeof(BoardPiece));
         }
+        
+        // Add the black pieces at their starting points
+        for (int row=0; row<3; row++) {
+            for (int column=0; column<8; column++) {
+                if (row%2 != column%2) {
+                    board[row][column] = BoardPieceBlack;
+                }
+            }
+        }
+        
+        // Add the white pieces at their starting points
+        for (int row=5; row<8; row++) {
+            for (int column=0; column<8; column++) {
+                if (row%2 != column%2) {
+                    board[row][column] = BoardPieceWhite;
+                }
+            }
+        }
+        
         captured = NULL;
     }
     return self;

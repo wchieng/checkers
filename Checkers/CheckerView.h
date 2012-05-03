@@ -13,8 +13,7 @@
 @class ViewController, Board;
 
 @interface CheckerView : UIView {
-    ViewController *_viewController;
     Board *_board;
 }
-
+@property (nonatomic, retain) Board *board;
 @end
