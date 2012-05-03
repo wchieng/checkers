@@ -3,7 +3,6 @@
 //  Checkers
 //
 //  Created by William Chieng on 5/2/12.
-//  Copyright (c) 2012 University of California, Berkeley. All rights reserved.
 //
 
 #import "CheckerView.h"
@@ -94,6 +93,10 @@
     loc.y = (int) floorf(location.y/40);
     NSLog(@"Touch at: (%d, %d)", loc.x, loc.y);
     
+    // Encode start position
+    touchStartX = loc.x;
+    touchStartY = loc.y;
+    
     currentPieceInMotion = [[self board] getBoardPieceAtLoc:loc];
     NSLog(@"CurrentPieceInMotion: %d", currentPieceInMotion);
 }
@@ -121,7 +124,22 @@
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"Touches ended");
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint location = [touch locationInView:self];
+    
+    boardLocation start;
+    start.x = touchStartX;
+    start.y = touchStartY;
+    
+    boardLocation dest;
+    dest.x = (int) floorf(location.x/40);
+    dest.y = (int) floorf(location.y/40);
+    
+    [[self board] movePieceFrom:start to:dest by:0];
+    
     currentPieceInMotion = BoardPieceEmpty;
+    [self setNeedsDisplay];
 }
 
 @end

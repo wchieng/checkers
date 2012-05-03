@@ -57,4 +57,17 @@
     }
 }
 
+// Regretting a few design decisions...
+- (BOOL) makeMoveFromX:(int)startX Y:(int)startY toNewX:(int)destX newY:(int)destY by:(int)player {
+    boardLocation start;
+    start.x = startX;
+    start.y = startY;
+    
+    boardLocation dest;
+    dest.x = destX;
+    dest.y = destY;
+    
+    return [[self board] movePieceFrom:start to:dest by:player];
+}
+
 @end

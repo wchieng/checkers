@@ -22,4 +22,6 @@ typedef struct {
 }
 @property (nonatomic, retain) Board* board;
 
+- (BOOL) makeMoveFromX: (int)startX Y: (int)startY toNewX: (int) destX newY: (int) destY  by: (int) player;
+
 @end

@@ -3,7 +3,6 @@
 //  Checkers
 //
 //  Created by William Chieng on 5/2/12.
-//  Copyright (c) 2012 University of California, Berkeley. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -17,6 +16,8 @@
     int currentPieceInMotion;
     CGFloat motionLocX;
     CGFloat motionLocY;
+    int touchStartX;
+    int touchStartY;
 }
 @property (nonatomic, retain) Board *board;
 @end

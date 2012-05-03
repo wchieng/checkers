@@ -10,6 +10,8 @@
 @implementation Board
 - (id) init {
     if (self = [super init]) {
+        
+        // Allocate and initialize board to all empty pieces
         board = malloc(8*sizeof(int *));
         for (int i=0; i<8; i++) {
             board[i] = calloc(8, sizeof(BoardPiece));
@@ -165,7 +167,7 @@
             return NO;
         }
         // Case: No moving backwards if not king
-        if (dest.y <= start.y) {
+        if (dest.y >= start.y) {
             if (piece == BoardPieceWhite) {
                 return NO;
             }
@@ -176,7 +178,7 @@
             return NO;
         }
         // Case: No moving backwards if not king
-        if (start.y <= dest.y) {
+        if (start.y >= dest.y) {
             if (piece == BoardPieceBlack) {
                 return NO;
             }
